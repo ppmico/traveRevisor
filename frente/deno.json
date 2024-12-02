@@ -1,0 +1,21 @@
+{
+  "tasks": {
+    "dev": "deno run -A npm:astro dev",
+    "start": "deno run -A npm:astro preview",
+    "build": "deno run -A npm:astro build"
+  },
+  "imports": {
+    "@deno/astro-adapter": "npm:@deno/astro-adapter",
+    "@astrojs/svelte": "npm:@astrojs/svelte",
+    "@we-gold/gpxjs": "npm:@we-gold/gpxjs@^1.0.12",
+    "astro": "npm:astro",
+    "@astrojs/deno": "npm:@astrojs/deno",
+    "astro/": "npm:/astro/",
+    "gpx-parser-builder": "npm:gpx-parser-builder@^1.1.1",
+    "leaflet": "npm:leaflet@^1.9.4",
+    "nanostores": "npm:nanostores@^0.11.3",
+    "svelte": "npm:svelte@^5.1.5",
+    "xmldom-qsa": "npm:xmldom-qsa@^1.1.3"
+  },
+  "nodeModulesDir":"auto"
+}
