@@ -4,6 +4,7 @@
     "npm:@astrojs/deno@*": "5.0.1_astro@3.6.5__@babel+core@7.26.0__vite@4.5.5",
     "npm:@astrojs/svelte@*": "5.7.2_astro@4.16.7__@babel+core@7.26.0__vite@5.4.10__zod@3.23.8_svelte@5.1.5__acorn@8.14.0_typescript@5.6.3",
     "npm:@deno/astro-adapter@*": "0.1.4_astro@4.16.7__@babel+core@7.26.0__vite@5.4.10__zod@3.23.8",
+    "npm:@nanostores/persistent@~0.10.2": "0.10.2_nanostores@0.11.3",
     "npm:@we-gold/gpxjs@*": "1.0.12",
     "npm:@we-gold/gpxjs@^1.0.12": "1.0.12",
     "npm:astro@*": "4.16.7_@babel+core@7.26.0_vite@5.4.10_zod@3.23.8",
@@ -587,6 +588,12 @@
       "dependencies": [
         "@jridgewell/resolve-uri",
         "@jridgewell/sourcemap-codec"
+      ]
+    },
+    "@nanostores/persistent@0.10.2_nanostores@0.11.3": {
+      "integrity": "sha512-BEndnLhRC+yP7gXTESepBbSj8XNl8OXK9hu4xAgKC7MWJHKXnEqJMqY47LUyHxK6vYgFnisyHmqq+vq8AUFyIg==",
+      "dependencies": [
+        "nanostores"
       ]
     },
     "@nodelib/fs.scandir@2.1.5": {
@@ -4252,6 +4259,7 @@
       "npm:@astrojs/deno@*",
       "npm:@astrojs/svelte@*",
       "npm:@deno/astro-adapter@*",
+      "npm:@nanostores/persistent@~0.10.2",
       "npm:@we-gold/gpxjs@^1.0.12",
       "npm:astro@*",
       "npm:gpx-parser-builder@^1.1.1",

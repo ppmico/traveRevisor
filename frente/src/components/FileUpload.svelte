@@ -9,7 +9,7 @@
             const gpx = GPX.parse(gpxText);
 
             //Comprobaciones del gpx
-            if (!gpx.trk || gpx.trk.length == 0) { throw new Error(); }
+            if (!gpx.trk || gpx.trk.length == 0) { throw new Error('Error procesando el GPX, por favor sube un gpx válido'); }
             if (gpx.trk.length > 1) { alert('Cuidado¡! Parece que el gpx tiene varios tracks. Se procesarán todos como si fuese el mismo'); }
 
             //Solo si es un gpx valido se actualiza el objeto $dataSent
@@ -23,7 +23,7 @@
             $trkSegs = segmentos;
             
         } catch (e) {
-            alert('Error procesando el GPX, por favor sube un gpx válido');
+            alert(e.message);
         }
 
     }

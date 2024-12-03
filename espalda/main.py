@@ -49,6 +49,11 @@ async def query_gpx(
     tipos_camino_id: list[int] = [],
     mochila_id: int = 0) -> str:
     
+    print(f"Received file: {file.filename}")
+    print(f"Received rama_id: {rama_id}")
+    print(f"Received tipos_camino_id: {tipos_camino_id}")
+    print(f"Received mochila_id: {mochila_id}")
+
     contents = await file.read()
 
     # check if the file is a valid gpx file

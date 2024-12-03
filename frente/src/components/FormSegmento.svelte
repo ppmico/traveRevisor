@@ -1,5 +1,5 @@
 <script>
-    import { trkSegs, formStep, dataSent } from "../sharedSht";
+    import { trkSegs, formStep, dataSent, callApi } from "../sharedSht";
     import SegDisplay from "./SegDisplay.svelte";
 
     let idTipoCamino = '';
@@ -17,12 +17,10 @@
         const prevIDs = $dataSent.idsTiposCamino;
         $dataSent = {...$dataSent, idsTiposCamino: prevIDs.concat(idTipoCamino)};
 
-        if ($formStep <= $trkSegs.length) { //$formStep starts at 1
+        if ($formStep+1 <= $trkSegs.length) { //$formStep starts at 1
             $formStep += 1;
         } else {
-            //TODO: cambiar de pagina y llamar a la API
-            console.log($dataSent);
-            window.location.href = '/submitRez';
+            $callApi = true; //cambio de pagina
         }
     }
 

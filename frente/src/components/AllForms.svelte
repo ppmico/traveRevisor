@@ -1,12 +1,19 @@
 <script>
     import FormGeneral from "./FormGeneral.svelte";
     import FormSegmento from "./FormSegmento.svelte";
-    import { formStep } from "../sharedSht";
+    import { formStep, callApi } from "../sharedSht";
+    import ApiCall from "./ApiCall.svelte";
 
 </script>
 
-{#if $formStep == 0}
-    <FormGeneral />
+{#if !$callApi}
+    
+    {#if $formStep == 0}
+        <FormGeneral />
+    {:else}
+        <FormSegmento />
+    {/if}
+
 {:else}
-    <FormSegmento />
+    <ApiCall/>
 {/if}

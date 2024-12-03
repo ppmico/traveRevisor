@@ -1,20 +1,24 @@
 <!-- src/components/Prueba.svelte -->
 <script>
-  import SegDisplay from "./SegDisplay.svelte";
-  let i = $state(0);
-  let trkSegs = [
-    [[40.7128, -74.0060], [34.0522, -118.2437], [41.8781, -87.6298]],
-    [[41.8781, -87.6298], [29.7604, -95.3698]],
-    [[29.7604, -95.3698], [39.7392, -104.9903]]
-  ];
-  let trkPoints = trkSegs.map(seg => seg);
-  let segPoints = $derived(trkSegs[i]);
+  import {dataSent} from '../sharedSht'
+
+  console.log("co1", dataSent.get());
+
+
+  const fileInput = new File(['../../../gepex.gpx'], 'gepex.gpx', {
+    type: 'application/gpx+xml',
+  });
+
+  $dataSent = {...$dataSent, idMochilon: 1, idRama: 0, idsTiposCamino: [1,2,0], file: fileInput};
+  // dataSent.set({idMochilon: "1", idRama: "0", idsTiposCamino: [1,2,0], file: fileInput});
+  console.log("co", dataSent.get());
+
 </script>
-  
-<SegDisplay {trkPoints} {segPoints} />
-<button onclick={() => i -= 1}>Decrement</button>
-<button onclick={() => i += 1}>Increment</button>
-  <!-- cómo hacer api req:
+
+
+<a href="/submitRez">oiiiiiiiiiiiiiiiiiiiii </a>
+
+<!-- cómo hacer api req:
     <script>
       import { dataSent } from '../sharedSht';
       import { paso } from '../sharedSht';
