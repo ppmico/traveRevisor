@@ -1,5 +1,5 @@
 <script>
-    import { dataSent } from '../sharedSht';
+    import { dataSent, apiResponse } from '../sharedSht';
 
     const file = $dataSent.file;
     const ramaId = $dataSent.idRama;
@@ -27,16 +27,21 @@
                 throw new Error('Error: ' + errorData.message + ', ' + errorData.error);
             }
             const data = await response.json();
-            
-            console.log('Response data:', data);
+
             alert('¡Archivo enviado con éxito!');
+            apiResponse.set(data);
+            window.location.href = '/eval-results';
+
         } catch (error) {
             console.error(error);
-            alert('Ocurrió un error.');
+            alert('Ocurrió un error. Intentelo de nuevo');
+            window.location.reload();
         }
     }
 
     sendData();
 
-
 </script>
+
+<!-- Placeholder que se muestre en pantalla mientras se hace la api call -->
+<h1>Enviando datos...</h1>

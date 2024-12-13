@@ -1,0 +1,20 @@
+---
+import RezDisplay from '../components/RezDisplay.svelte';
+---
+<script>
+    import { apiResponse } from "../sharedSht";
+    
+    const resultDisplay = document.getElementById('result-display');
+    if (resultDisplay) {
+        console.log('result-display element found');
+        resultDisplay.textContent = apiResponse.get();
+    } else {
+        console.error('result-display element not found');
+    }
+
+</script>
+
+<body>
+    <!-- <RezDisplay client:only="svelte" /> -->
+    <p id="result-display">Loading...</p>
+</body>

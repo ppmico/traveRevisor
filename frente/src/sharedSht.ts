@@ -5,6 +5,7 @@ export const trkSegs = atom([]);
 export const callApi = atom(false);
 export const formStep = atom(0);
 
+// el map dataSent es tipado para que funcionen las comprobaciones en ApiCall
 interface DataSent {
     file: File | null;
     idMochilon: string | null;
@@ -20,4 +21,4 @@ export const dataSent = map<DataSent>({
 });
 
 //firma: persistentAtom<string | undefined>(name: string, initial?: string | undefined)
-export const apiResponse = persistentAtom('apiResponse', undefined);
+export const apiResponse = persistentAtom<string>('apiResponse', 'JFKJDFSKJDFSKJDFSKJ');
