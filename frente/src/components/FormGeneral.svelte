@@ -1,5 +1,4 @@
-<script>
-  
+<script>  
     import { dataSent, formStep } from "../sharedSht";
     import FileUpload from "./FileUpload.svelte";
 
@@ -21,7 +20,8 @@
   
 </script>
 
-<form onsubmit={handleSubmit}>
+
+<form class="font-sans" onsubmit={handleSubmit}>
   <FileUpload />
 
   <label for="rama">Qué rama?</label>
@@ -34,11 +34,15 @@
 
   </select>
   <br>
-  <label for="conMochila">Llevarán mochila grande?</label>
-  <select id="conMochila" required bind:value={idConMochilon}>
+  <p class="text-green-500">Llevarán mochila grande?</p>
+  <input type="radio" id="conMochila" name="mochilaRB" value="1" bind:group={idConMochilon} required>
+  <label for="conMochila">Sí</label><br>
+  <input type="radio" id="sinMochila" name="mochilaRB" value="0" bind:group={idConMochilon} required>
+  <label for="sinMochila">No</label><br>
+  <!-- <select id="conMochila" required bind:value={idConMochilon}>
     <option value="1">Si</option>
     <option value="0">No</option>
-  </select>
+  </select> -->
   <br>
   
   <button type="submit">Continuar</button>
