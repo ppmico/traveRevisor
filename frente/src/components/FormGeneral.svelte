@@ -1,50 +1,90 @@
 <script>  
     import { dataSent, formStep } from "../sharedSht";
     import FileUpload from "./FileUpload.svelte";
+    import { Button, Radio, RadioButton, ButtonGroup } from 'flowbite-svelte';
 
-    let idConMochilon = '';
-    let idLaRama = '';
+    let idConMochilon = $state(false);
+    let idLaRama = $state(false);
 
     //funcion que se ejecuta al intentar continuar el formulario
     function handleSubmit(e) {
         e.preventDefault();
 
-        if (!$dataSent.file) {
+        if (!idLaRama) {
+          alert('¡No se eligió ninguna rama! Por favor, haz click una rama')
+        } else if (!idConMochilon) {
+          alert('Por favor, especifica si se llevará mochila de travesía')
+        } else if (!$dataSent.file) {
             alert('¡No se subió ningún archivo! Por favor, sube el archivo gpx.');
-            return;
+        } else {
+          $dataSent = {...$dataSent, idMochilon: idConMochilon, idRama: idLaRama}; //updated like this to trigger reactivity
+          $formStep += 1; //avanza al siguiente paso del formulario
         }
-        $dataSent = {...$dataSent, idMochilon: idConMochilon, idRama: idLaRama}; //updated like this to trigger reactivity
-        $formStep += 1; //avanza al siguiente paso del formulario
     }
 
   
 </script>
 
+<div class="flex-col space-y-9 p-4">
 
-<form class="font-sans" onsubmit={handleSubmit}>
-  <FileUpload />
+  <p class="text-4xl font-extrabold">Información básica de la ruta</p>
+  <div class="flex sm:flex-col-reverse lg:flex-row space-x-2.5 ">
+    <FileUpload />
+    <div class="flex-col">
+      <p class="text-lg font-bold">Sube el archivo .gpx de la ruta</p>      
+      <ul class="text-base list-disc ml-6 font-medium">
+        <li>Se recomienda usar gpx.studio para crearlo (khe¿?)</li>
+        <li>El archivo no puede pesar más de ??????? Mb (cómo reducirlo)</li>
+        <li>Recuerda <span class="font-extrabold"> separar el track en segmentos</span>, para indicar los tipos de camino en la ruta (eso como lo hago?¿)</li>
+      </ul>
+    </div>
+  </div>
 
-  <label for="rama">Qué rama?</label>
-  <select id="rama" required bind:value={idLaRama}>
-    <option value="0">Castores</option>
-    <option value="1">Lobatos</option>
-    <option value="2">Tropa</option>
-    <option value="3">Pios</option>
-    <option value="4">Clan</option>
+  <div class="flex-col">
+    <p class="text-lg font-bold">¿Qué rama hará la excursión?</p>
+    <p class="text-sm font-medium">Escoge una opción</p>
 
-  </select>
-  <br>
-  <p class="text-green-500">Llevarán mochila grande?</p>
-  <input type="radio" id="conMochila" name="mochilaRB" value="1" bind:group={idConMochilon} required>
-  <label for="conMochila">Sí</label><br>
-  <input type="radio" id="sinMochila" name="mochilaRB" value="0" bind:group={idConMochilon} required>
-  <label for="sinMochila">No</label><br>
-  <!-- <select id="conMochila" required bind:value={idConMochilon}>
-    <option value="1">Si</option>
-    <option value="0">No</option>
-  </select> -->
-  <br>
-  
-  <button type="submit">Continuar</button>
+    <ButtonGroup>
+      <RadioButton value="0" bind:group={idLaRama}>
+        <div class="w-full p-3">
+          <div class="font-medium">Castores</div>
+          <div class="text-sm font-normal text-gray-500 dark:text-gray-400">(6-8 años)</div>
+        </div>
+      </RadioButton>
+      <RadioButton value="1" bind:group={idLaRama}>
+        <div class="w-full p-3">
+          <div class="font-medium">Lobatos</div>
+          <div class="text-sm font-normal text-gray-500 dark:text-gray-400">(8-11 años)</div>
+        </div>
+      </RadioButton>
+      <RadioButton value="2" bind:group={idLaRama}>
+        <div class="w-full p-3">
+          <div class="font-medium">Tropa</div>
+          <div class="text-sm font-normal text-gray-500 dark:text-gray-400">(11-14 años)</div>
+        </div>
+      </RadioButton>
+      <RadioButton value="3" bind:group={idLaRama}>
+        <div class="w-full p-3">
+          <div class="font-medium">Escultas</div>
+          <div class="text-sm font-normal text-gray-500 dark:text-gray-400">(14-17 años)</div>
+        </div>
+      </RadioButton>
+      <RadioButton value="4" bind:group={idLaRama}>
+        <div class="w-full p-3">
+          <div class="font-medium">Clan</div>
+          <div class="text-sm font-normal text-gray-500 dark:text-gray-400">(17-21 años)</div>
+        </div>
+      </RadioButton>
+    </ButtonGroup>
+  </div>
 
-</form>
+
+  <div class="flex-col space-y-1 w-64">
+    <p class="text-lg font-bold">¿Llevarán mochila de travesía?</p>
+    <ul class=" w-full items-center rounded-lg border border-gray-300 sm:flex divide-x rtl:divide-x-reverse divide-gray-300">
+      <li class="w-1/2"><Radio value="1" bind:group={idConMochilon} class="p-3">Si</Radio></li>
+      <li class="w-1/2"><Radio value="0" bind:group={idConMochilon} class="p-3">No</Radio></li>
+    </ul>
+  </div>
+  <Button on:click={handleSubmit} class="text-base">Continuar</Button>
+</div>

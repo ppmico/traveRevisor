@@ -1,5 +1,5 @@
 <script>
-    // import "../styles/global.css"
+    import "../styles/global.css"
 
     import FormGeneral from "./FormGeneral.svelte";
     import FormSegmento from "./FormSegmento.svelte";

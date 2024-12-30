@@ -28,7 +28,7 @@
             }
             const data = await response.json();
 
-            alert('¡Archivo enviado con éxito!');
+            // alert('¡Archivo enviado con éxito!');
             apiResponse.set(data);
             window.location.href = '/eval-results';
 
