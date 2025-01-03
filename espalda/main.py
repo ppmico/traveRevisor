@@ -17,29 +17,26 @@ app.add_middleware( # para que el navegador no bloquee la respuesta (le mete cab
 
 
 def parse_seg_info(segmentos):
-    output = ''
+    response = {"segments": []}
 
     for i, segmento in enumerate(segmentos, start=1):
-        output += f'Segmento {i}:\n'
-        output += f'Distancia: {segmento["distancia"]:.2f} km\n'
-        output += f'Ascenso acumulado: {segmento["ascenso_acumulado"]:.2f} metros\n'
-        output += f'Descenso acumulado: {segmento["descenso_acumulado"]:.2f} metros\n'
-        # output += f'Tipo de camino seleccionado para el segmento {i}: {self.tipo_camino[i-1]}\n\n'
-        output += f'Tiempo MIDE {i}: {segmento["t_mide"]:.2f}\n'
-        output += f'Tiempo real {i}: {segmento["t_extra"]:.2f}\n\n'
-        output += f'¿Aceptable según Kotic? {i}: {segmento["val_kotic"]}\n'
-        output += f'¿Aceptable según Experiencia? {i}: {segmento["val_exp"]}\n\n'
-        output += '\n'
+        response["segments"].append({
+            "id": i,
+            "distance": round(segmento["distancia"], 2),
+            "totalAscent": round(segmento["ascenso_acumulado"], 2),
+            "totalDescent": round(segmento["descenso_acumulado"], 2),
+            "mideTime": round(segmento["t_mide"], 2),
+            "actualTime": round(segmento["t_extra"], 2),
+            "koticApproved": segmento["val_kotic"],
+            "experienceApproved": segmento["val_exp"]
+        })
 
-    # si todos los segmentos son aceptables según Kotic y Experiencia, entonces la ruta es aceptable
-    kotic = all(segmento["val_kotic"] for segmento in segmentos)
-    exp = all(segmento["val_exp"] for segmento in segmentos)
+    response["overall"] = {
+        "koticApproved": all(s["val_kotic"] for s in segmentos),
+        "experienceApproved": all(s["val_exp"] for s in segmentos)
+    }
 
-    output += 'VALORACIÓN GENERAL\n'
-    output += f'¿Aceptable según Kotic? {i}: {kotic}\n'
-    output += f'¿Aceptable según Experiencia? {i}: {exp}\n\n'
-    
-    return output
+    return response
 
 # this is a get query really but we are using post to allow file uploads, so a file can be used as a parameter
 @app.post("/query-gpx/")
@@ -71,8 +68,8 @@ async def query_gpx(
         return JSONResponse(status_code=400, content={"message": "Invalid mochila_id", "error": "mochila_id must be between 0 and 1"})
     
     # procesar el gpx
-        
-    return parse_seg_info(procesar_gpx(gpx, rama_id, tipos_camino_id, mochila_id))
+    jsonResponse = parse_seg_info(procesar_gpx(gpx, rama_id, tipos_camino_id, mochila_id))
+    return JSONResponse(content=jsonResponse)
 
 # if __name__ == "__main__":
 #     import uvicorn

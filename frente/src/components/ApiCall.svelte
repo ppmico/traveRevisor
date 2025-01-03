@@ -1,4 +1,5 @@
 <script>
+    import { Spinner } from 'flowbite-svelte';
     import { dataSent, apiResponse } from '../sharedSht';
 
     const file = $dataSent.file;
@@ -18,17 +19,27 @@
 
     async function sendData() {
         try {
-            const response = await fetch('http://127.0.0.1:8000/query-gpx/', {
+            const apiResponsePromise = await fetch('http://127.0.0.1:8000/query-gpx/', {
                 method: 'POST',
                 body: formData
             });
+
+            function delay(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+            const timeoutPromise = delay(3000).then(() => {
+                throw new Error('Error: Request timed out');
+            });
+
+            const response = await Promise.race([apiResponsePromise, timeoutPromise]);
+
             if (!response.ok) {
                 const errorData = await response.json();
                 throw new Error('Error: ' + errorData.message + ', ' + errorData.error);
             }
             const data = await response.json();
 
-            // alert('¡Archivo enviado con éxito!');
+            // Archivo enviado con éxito
             apiResponse.set(data);
             window.location.href = '/eval-results';
 
@@ -40,8 +51,7 @@
     }
 
     sendData();
-
 </script>
 
 <!-- Placeholder que se muestre en pantalla mientras se hace la api call -->
-<h1>Enviando datos...</h1>
+<div class="flex flex-col justify-center items-center h-screen"><Spinner/> Enviando datos...</div>
