@@ -3,7 +3,6 @@
   import { apiResponse } from "../sharedSht";
 
   const data = apiResponse.get();
-  
 </script>
 
 <div class="max-w-2xl mx-auto p-6 space-y-6">

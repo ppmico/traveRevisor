@@ -1,5 +1,6 @@
 import { atom, map } from 'nanostores';
 import { persistentAtom } from '@nanostores/persistent';
+import { persistentMap } from '@nanostores/persistent';
 
 export const trkSegs = atom([]);
 export const callApi = atom(false);
@@ -21,4 +22,7 @@ export const dataSent = map<DataSent>({
 });
 
 //firma: persistentAtom<string | undefined>(name: string, initial?: string | undefined)
-export const apiResponse = persistentAtom<string>('apiResponse', 'JFKJDFSKJDFSKJDFSKJ');
+export const apiResponse = persistentAtom<string>('apiResponse', 'valueNotSet',{
+  encode: JSON.stringify,
+  decode: JSON.parse,
+});

@@ -19,19 +19,14 @@
 
     async function sendData() {
         try {
-            const apiResponsePromise = await fetch('http://127.0.0.1:8000/query-gpx/', {
+            const controller = new AbortController(); //para añadir timeout al fetch
+            const timeout = setTimeout(() => controller.abort(), 10000);
+
+            const response = await fetch('http://127.0.0.1:8000/query-gpx/', { //TODO: mover url a .env
                 method: 'POST',
-                body: formData
-            });
-
-            function delay(ms) {
-                return new Promise(resolve => setTimeout(resolve, ms));
-            }
-            const timeoutPromise = delay(3000).then(() => {
-                throw new Error('Error: Request timed out');
-            });
-
-            const response = await Promise.race([apiResponsePromise, timeoutPromise]);
+                body: formData,
+                signal: controller.signal 
+            }).finally(() => clearTimeout(timeout));
 
             if (!response.ok) {
                 const errorData = await response.json();
@@ -44,6 +39,7 @@
             window.location.href = '/eval-results';
 
         } catch (error) {
+            // if (error.name === 'AbortError') then Request timed out'
             console.error(error);
             alert('Ocurrió un error. Intentelo de nuevo');
             window.location.reload();
@@ -54,4 +50,4 @@
 </script>
 
 <!-- Placeholder que se muestre en pantalla mientras se hace la api call -->
-<div class="flex flex-col justify-center items-center h-screen"><Spinner/> Enviando datos...</div>
+<div class="flex flex-col justify-center items-center h-screen italic"><Spinner/> Enviando datos...</div>
