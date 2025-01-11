@@ -33,8 +33,8 @@
     <div class="flex-col">
       <p class="text-lg font-bold">Sube el archivo .gpx de la ruta</p>      
       <ul class="text-base list-disc ml-6 font-medium">
-        <li>Se recomienda usar gpx.studio para crearlo (khe¿?)</li>
         <li>El archivo no puede pesar más de ??????? Mb (cómo reducirlo)</li>
+        <li>Se recomienda usar la página gpx.studio para crearlo (<a href="FAQ/#" target="_blank">gpx.studio)</a></li>
         <li>Recuerda <span class="font-extrabold"> separar el track en segmentos</span>, para indicar los tipos de camino en la ruta (eso como lo hago?¿)</li>
       </ul>
     </div>

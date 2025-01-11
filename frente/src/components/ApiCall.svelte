@@ -22,7 +22,7 @@
             const controller = new AbortController(); //para añadir timeout al fetch
             const timeout = setTimeout(() => controller.abort(), 10000);
 
-            const response = await fetch('http://127.0.0.1:8000/query-gpx/', { //TODO: mover url a .env
+            const response = await fetch(import.meta.env.PUBLIC_APIDIR, { //TODO: mover url a .env
                 method: 'POST',
                 body: formData,
                 signal: controller.signal 
