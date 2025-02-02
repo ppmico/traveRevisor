@@ -9,6 +9,7 @@
     "@deno/astro-adapter": "npm:@deno/astro-adapter",
     "@astrojs/svelte": "npm:@astrojs/svelte",
     "@nanostores/persistent": "npm:@nanostores/persistent@^0.10.2",
+    "@tailwindcss/typography": "npm:@tailwindcss/typography@^0.5.16",
     "astro": "npm:astro",
     "@astrojs/deno": "npm:@astrojs/deno",
     "astro/": "npm:/astro/",

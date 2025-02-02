@@ -7,5 +7,5 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   output: 'server',
   adapter: deno(),
-  integrations: [svelte(),tailwind( )]
+  integrations: [svelte(),tailwind( )],
 });

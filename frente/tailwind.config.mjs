@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
+
 import flowbitePlugin from 'flowbite/plugin'
 
 export default {
@@ -14,6 +15,6 @@ export default {
       }
     }
   },
-  plugins: [flowbitePlugin]
+  plugins: [require('@tailwindcss/typography'), flowbitePlugin]
 };
 

@@ -1,0 +1,162 @@
+---
+const { frontmatter } = Astro.props;
+import "../styles/global.css"
+---
+
+<html lang="en">
+  <head>
+    <style>
+      /* Base article styling */
+      article {
+        @apply max-w-7xl mx-auto px-2 py-8 md:px-4 lg:px-6;
+        @apply font-sans text-gray-600 dark:text-gray-300;
+        @apply prose-lg dark:prose-invert prose-headings:font-semibold;
+      }
+
+      /* Headings */
+      article h1,
+      article :global(h1) {
+        @apply text-4xl font-bold text-gray-900 dark:text-white;
+        @apply mb-6 pt-8;
+        @apply tracking-tight;
+      }
+
+      article h2,
+      article :global(h2) {
+        @apply text-3xl text-gray-800 dark:text-gray-100;
+        @apply mt-8 mb-4;
+        @apply border-b border-gray-200 dark:border-gray-700;
+        @apply pb-2;
+      }
+
+      article h3,
+      article :global(h3) {
+        @apply text-2xl text-gray-800 dark:text-gray-100;
+        @apply mt-6 mb-3;
+        @apply font-medium;
+      }
+
+      /* Paragraphs and text */
+      article p,
+      article :global(p) {
+        @apply mb-4 leading-relaxed;
+        @apply text-gray-600 dark:text-gray-300;
+      }
+
+      /* Links */
+      article a,
+      article :global(a) {
+        @apply text-blue-600 dark:text-blue-400;
+        @apply transition-colors duration-200;
+        @apply hover:text-blue-800 dark:hover:text-blue-300;
+        @apply no-underline hover:underline;
+      }
+
+      /* Lists */
+      article ul,
+      article :global(ul) {
+        @apply list-disc list-inside;
+        @apply my-4 ml-4;
+      }
+
+      article ol,
+      article :global(ol) {
+        @apply list-decimal list-inside;
+        @apply my-4 ml-4;
+      }
+
+      article li,
+      article :global(li) {
+        @apply my-2;
+      }
+
+      /* Images and Figures */
+      article img,
+      article :global(img) {
+        @apply rounded-lg;
+        @apply shadow-lg;
+        @apply my-8;
+        @apply max-w-full h-auto;
+        @apply transition-transform duration-200;
+        /* @apply hover:scale-[1.02]; */
+      }
+
+      article figure,
+      article :global(figure) {
+        @apply my-8 text-center;
+      }
+
+      article figcaption,
+      article :global(figcaption) {
+        @apply text-sm text-gray-500 dark:text-gray-400;
+        @apply mt-2 italic;
+      }
+
+      /* Code blocks */
+      article pre,
+      article :global(pre) {
+        @apply bg-gray-50 dark:bg-gray-800;
+        @apply rounded-lg p-4;
+        @apply my-4;
+        @apply overflow-x-auto;
+      }
+
+      article code,
+      article :global(code) {
+        @apply bg-gray-100 dark:bg-gray-800;
+        @apply rounded px-1;
+        @apply text-sm;
+      }
+
+      /* Blockquotes */
+      article blockquote,
+      article :global(blockquote) {
+        @apply border-l-4 border-blue-500 dark:border-blue-400;
+        @apply pl-4 py-2 my-4;
+        @apply italic;
+        @apply text-gray-700 dark:text-gray-300;
+      }
+
+      /* Tables */
+      article table,
+      article :global(table) {
+        @apply min-w-full my-6;
+        @apply border-collapse;
+      }
+
+      article th,
+      article :global(th) {
+        @apply bg-gray-100 dark:bg-gray-800;
+        @apply px-4 py-2;
+        @apply text-left;
+        @apply font-semibold;
+      }
+
+      article td,
+      article :global(td) {
+        @apply border-t border-gray-200 dark:border-gray-700;
+        @apply px-4 py-2;
+      }
+
+      /* Horizontal Rule */
+      article hr,
+      article :global(hr) {
+        @apply my-8 border-t border-gray-200 dark:border-gray-700;
+      }
+
+      /* Custom Elements */
+      article kbd,
+      article :global(kbd) {
+        @apply px-2 py-1 text-sm;
+        @apply bg-gray-100 dark:bg-gray-800;
+        @apply rounded border border-gray-200 dark:border-gray-700;
+        @apply shadow-sm;
+      }
+    </style>
+  </head>
+  <body class="bg-white dark:bg-gray-900">
+    <article>
+      <slot />
+    </article>
+  </body>
+</html>
