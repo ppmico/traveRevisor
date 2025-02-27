@@ -33,9 +33,9 @@
     <div class="flex-col">
       <p class="text-lg font-bold">Sube el archivo .gpx de la ruta</p>      
       <ul class="text-base list-disc ml-6 font-medium">
-        <li>El archivo no puede pesar más de ??????? Mb (cómo reducirlo)</li>
-        <li>Se recomienda usar la página gpx.studio para crearlo (<a href="FAQ/#" target="_blank">gpx.studio)</a></li>
-        <li>Recuerda <span class="font-extrabold"> separar el track en segmentos</span>, para indicar los tipos de camino en la ruta (eso como lo hago?¿)</li>
+        <li>El archivo no puede pesar más de 5 Mb (<span class="text-blue-600 hover:text-blue-800 underline cursor-pointer"><a href="faq#reduce-el-tamaño-de-una-ruta" target="_blank">¿cómo lo reduzco?</a></span>)</li>
+        <li>Se recomienda usar la página <span class="text-blue-600 hover:text-blue-800 underline cursor-pointer"><a href="https://gpx.studio/es/app#6.96/42.519/-0.059" target="_blank">gpx.studio</a></span> para crearlo </li>
+        <li>Recuerda <span class="font-extrabold"> separar el track en segmentos</span>, para indicar los tipos de camino en la ruta (<span class="text-blue-600 hover:text-blue-800 underline cursor-pointer"><a href="faq#2-divide-la-ruta-en-segmentos" target="_blank">¿y eso como lo hago?</a></span>)</li>
       </ul>
     </div>
   </div>

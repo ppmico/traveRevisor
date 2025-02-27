@@ -6,41 +6,51 @@ image: '../assets/images/file.png'
 ---
 # FAQ
 
-This is my first article written in Markdown. 
-You can use all standard Markdown features like:
-- **Bold text**
-- *Italic text*
-- [Links](https://example.com)
-![A beautiful landscape](../assets/images/file.png)
-<img src="/src/assets/images/file.png">
-## Crea tu ruta para revisar con TraveRevisor
-La manera recomendada de 
-
 
 ## Crea tu ruta
 
 Se recomienda usar [gpx.studio](https://gpx.studio/es/app#5.93/41.578/-2.89), que tiene todas las herramientas que necesitarás para crear y editar rutas. 
 En su [página de ayuda](https://gpx.studio/es/help) está todo lo que necesitas saber para utilizarla, pero estos son los **pasos generales**:
 ### 1. Dibuja el camino  
-Primero escoge en *Planificar o editar una ruta* y a continuación haz click en los lugares por los que debe pasar la ruta. Puedes arrastrar los '***puntos de anclaje***' para hacer que pase exactamente por donde quieras.  
- ![Gif: Crear ruta y mover un punto de anclaje]
+Primero escoge la opción de '*Correr/Caminar*' en el modo ***Planificar o editar una ruta*** y a continuación haz click en los lugares en el mapa por los que debe pasar la ruta. Puedes arrastrar los '**puntos de anclaje**' para hacer que pase exactamente por donde quieras.  
+<figure>
+   <img class="mx-auto" src="src/assets/gifs/crear_ruta.gif" alt="Gif: Crear ruta y mover un punto de anclaje">
+   <figcaption>Crea tu ruta. Puedes mover los puntos de anclaje</figcaption>
+</figure>
 
 ### 2. Divide la ruta en segmentos 
-Esta parte es opcional pero para conseguir una evaluación más precisa debes dividir tu ruta en **segmentos**, creando un segmento cada vez que el tipo de camino cambie (*Pista, Senderos, Malos caminos*).
-No es necesario ser muy preciso, si por ejemplo la ruta atraviesa un bosque con malos caminos, crea un segmento desde el inicio hasta el final del bosque más o menos para luego poder indicar que ese tramo es de malos caminos.
+Esta parte es opcional pero para conseguir una evaluación más precisa debes dividir tu ruta en **segmentos**, creando un segmento cada vez que el tipo de camino cambie (*Pista, Senderos, Malos caminos*). Tranquilidad, no es necesario ser muy preciso. 
 
-1. Selecciona la opción **‘Recortar o dividir’** y en el desplegable escoge '*Segmentos*'
-   ![Imagen: Selección de recorte o división]  
+Por ejemplo: si la ruta atraviesa un bosque con malos caminos, crea un segmento desde el inicio hasta el final del bosque más o menos, y así podrás realizar la evaluación indicando que ese tramo es de malos caminos.
+
+1. En el modo ***Recortar o dividir*** escoge la opción de '*Segmentos*' en el desplegable
+   <figure>
+      <img class="mx-auto" src="src/assets/gifs/seleccionar_recortar.gif" alt="Gif: Crear ruta y mover un punto de anclaje">
+      <figcaption>Selecciona 'Recortar o dividir' y asegúrate de que sea en segmentos</figcaption>
+   </figure> 
 2. Separa la ruta segmento por segmento:  
    - Donde hayas creado puntos de anclaje, verás un icono para separar la ruta en dos segmentos por ese punto.  
    - También puedes hacer clic en cualquier otro punto de la ruta para separar por ahí.
-   ![Gif: recortando en segmentos]  
-   **Cuidado:** no hay ninguna confirmación visual de que has dividido la ruta al clicar, hay que fiarse.
+   <figure>
+      <img class="mx-auto" src="src/assets/gifs/crear_segmento.gif" alt="Gif: Dividir en segmentos el track">
+      <figcaption>Puedes recortar por los puntos de anclaje que ya existan o en otro punto de la ruta haciendo click</figcaption>
+   </figure>   
+
+   **Cuidado:** no hay ninguna confirmación visual de que has dividido la ruta al clicar, pero puedes volver al modo '*Planificar o editar una ruta*' y si la ruta ha sido recortada aparecerá un punto de anclaje por donde hayas recortado.
 
 ### 3. Descarga tu ruta  
-1. Ponle un nombre a tu ruta (opcional).
-![Imagen: cambiando el nombre a trak]  
-2. Haz click ***Archivo > Exportar*** y luego selecciona ***Descargar archivo***. Puedes también donar para que puedan mantener la página funcionando :)  ![Gif de la descarga]
+1. Ponle un nombre a tu ruta para encontrarla más fácilmente en tu ordenador (opcional).
+<figure>
+      <img class="mx-auto" src="src/assets/gifs/cambiar_nombre_track.gif" alt="Gif: Cambiar el nombre del track">
+      <figcaption>Cambia el nombre de la ruta para encontrar el archivo fácilmente</figcaption>
+</figure>
+
+2. Haz click ***Archivo > Exportar*** y luego selecciona ***Descargar archivo***. Puedes también donar para que puedan mantener la página funcionando :)
+
+<figure>
+      <img class="mx-auto" src="src/assets/gifs/descargar_ruta.gif" alt="Gif: Descargar el track">
+      <figcaption>Exporta el archivo de la ruta</figcaption>
+</figure>
 
 ¡Listo! Tu ruta está lista para evaluarla con **TraveRevisor**.  
 
@@ -48,7 +58,21 @@ No es necesario ser muy preciso, si por ejemplo la ruta atraviesa un bosque con 
 ## Reduce el tamaño de una ruta
 Si el archivo .gpx en el que tienes tu ruta guardada es demasiado grande (más de 5Mb) puedes subirlo a [gpx.studio](https://gpx.studio/es/app#5.93/41.578/-2.89) para reducir su tamaño.
 
-1. Sube el archivo a [gpx.studio](https://gpx.studio/es/app#5.93/41.578/-2.89) haciendo click en ***Archivo > Abrir...*** y seleccionando de tu ordenador el archivo extensión `.gpx` de tu ruta. ![gif de hacer eso]
-2. Una vez subido tu archivo selecciona la herramienta ***Reducir la cantidad de puntos GPS*** y usa el control deslizante para simplificar la ruta. La idea es reducir la complejidad de la ruta pero sin hacerla demasiado sencilla.
-Una vez hayas ajustado con el deslizante la complejidad de la ruta haz click en '*Minimizar*'. ![img selección Minimizar]
-3. Por último descarga la ruta: Haz click en ***Archivo > Exportar*** y luego selecciona ***Descargar archivo***. Comprueba que el tamaño del archivo resultante es menor a 5Mb, si no lo es repite el proceso. ![Gif de la descarga]
+1. Sube el archivo a [gpx.studio](https://gpx.studio/es/app#5.93/41.578/-2.89) haciendo click en ***Archivo > Abrir...*** y seleccionando de tu ordenador el archivo extensión `.gpx` de tu ruta. 
+<figure>
+      <img class="mx-auto" src="src/assets/gifs/abrir_gpx.gif" alt="Gif: Abrir un track de tu ordenador">
+      <figcaption>Selecciona 'Abrir' y encuentra tu track entre tus archivos</figcaption>
+</figure>
+
+2. Una vez subido tu archivo selecciona la herramienta ***Reducir la cantidad de puntos GPS*** y usa el control deslizante para simplificar la ruta (mayor *Tolerancia* = archivo más pequeño, pero también menos preciso). La idea es reducir la complejidad de la ruta pero sin hacerla demasiado sencilla.
+Una vez hayas ajustado con el deslizante la complejidad de la ruta haz click en '*Minimizar*'.
+<figure>
+      <img class="mx-auto" src="src/assets/gifs/minimizar_gpx.gif" alt="Gif: Seleccionar minimizar y simplificar la ruta">
+      <figcaption>Simplifica tu ruta para que ocupe menos</figcaption>
+</figure>
+
+3. Por último descarga la ruta: Haz click en ***Archivo > Exportar*** y luego selecciona ***Descargar archivo***. Comprueba que el tamaño del archivo resultante es menor a 5Mb, y si no lo es repite el proceso.
+<figure>
+      <img class="mx-auto" src="src/assets/gifs/descargar_ruta.gif" alt="Gif: Descargar el track">
+      <figcaption>Exporta el archivo reducido de la ruta</figcaption>
+</figure>
