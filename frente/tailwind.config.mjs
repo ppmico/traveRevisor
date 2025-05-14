@@ -1,10 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 
 
-import flowbitePlugin from 'flowbite/plugin'
 
 export default {
-  content: ['./src/**/*.{html,js,svelte,ts}', './node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'],
+  content: [
+    './src/**/*.{astro,html,js,svelte,ts,md,mdx,css}', 
+    './node_modules/flowbite-svelte/**/*.{astro,html,js,svelte,ts,md,mdx,css}',
+    './node_modules/flowbite/**/*.{astro,html,js,svelte,ts,md,mdx,css}'
+  ],
   darkMode: 'selector',
   theme: {
     extend: {
@@ -15,6 +18,9 @@ export default {
       }
     }
   },
-  plugins: [require('@tailwindcss/typography'), flowbitePlugin]
+  plugins: [
+    require('@tailwindcss/typography'), 
+    require('flowbite/plugin')
+  ]
 };
 

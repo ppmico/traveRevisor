@@ -1,28 +1,26 @@
 {
-    "name": "trave-revisor",
-    "type": "module",
-    "version": "0.0.1",
-    "scripts": {
-      "dev": "astro dev",
-      "start": "astro preview",
-      "build": "astro build",
-      "preview": "astro preview"
-    },
-    "dependencies": {
-      "@astrojs/tailwind": "^5.1.3",
-      "@astrojs/svelte": "^5.2.0",
-      "@nanostores/persistent": "^0.10.2",
-      "@tailwindcss/typography": "^0.5.16",
-      "astro": "^4.7.1",
-      "flowbite": "^2.5.2",
-      "flowbite-svelte": "^0.47.4",
-      "gpx-parser-builder": "^1.1.1",
-      "leaflet": "^1.9.4",
-      "nanostores": "^0.11.3",
-      "svelte": "^5.1.5",
-      "xmldom-qsa": "^1.1.3"
-    },
-    "devDependencies": {
-      "tailwindcss": "^3.4.17"
-    }
+  "name": "trave-revisor",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro preview",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/svelte": "^5.2.0",
+    "@astrojs/tailwind": "^5.1.3",
+    "@nanostores/persistent": "^0.10.2",
+    "@tailwindcss/typography": "^0.5.16",
+    "astro": "^4.7.1",
+    "flowbite": "^2.5.2",
+    "flowbite-svelte": "^0.47.4",
+    "gpx-parser-builder": "^1.1.1",
+    "leaflet": "^1.9.4",
+    "nanostores": "^0.11.3",
+    "svelte": "^5.1.5",
+    "tailwindcss": "^3.4.17",
+    "xmldom-qsa": "^1.1.3"
   }
+}

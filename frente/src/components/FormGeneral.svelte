@@ -11,7 +11,7 @@
         e.preventDefault();
 
         if (!idLaRama) {
-          alert('¡No se eligió ninguna rama! Por favor, haz click una rama')
+          alert('¡No se eligió ninguna rama! Por favor, escoge una rama')
         } else if (!idConMochilon) {
           alert('Por favor, especifica si se llevará mochila de travesía')
         } else if (!$dataSent.file) {
