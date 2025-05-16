@@ -36,7 +36,7 @@
 
             // Archivo enviado con éxito
             apiResponse.set(data);
-            window.location.href = '/eval-results';
+            window.location.href = './eval-results';
 
         } catch (error) {
             // if (error.name === 'AbortError') then Request timed out'
