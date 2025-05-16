@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="frente/public/webBanner.png" alt="TraveRevisor Banner" style="max-width: 25%; height: auto;">
+</p>
+
 # TraveRevisor
 
 TraveRevisor es una herramienta diseñada para evaluar rutas como actividad para grupos de tiempo libre. Concretamente, está pensada para ser utilizada por los responsables de grupos scout preparando las rutas para sus educandos, pero perfectamente puede ser usada en casos de uso análogos. 
