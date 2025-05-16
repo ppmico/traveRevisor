@@ -1,4 +1,5 @@
 <script>  
+    import "../styles/global.css"
     import { dataSent, formStep } from "../sharedSht";
     import FileUpload from "./FileUpload.svelte";
     import { Button, Radio, RadioButton, ButtonGroup } from 'flowbite-svelte';
