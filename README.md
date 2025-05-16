@@ -70,3 +70,6 @@ Para lanzar la página web en local es necesario:
   ```
   npm ci && npm run build && npm run preview
   ```
+
+### Atribuciones:
+Logo diseñado por [Freepix](www.freepik.es)
