@@ -1,0 +1,6 @@
+geopy
+pandas
+fastapi
+gpxpy
+uvicorn
+python-multipart

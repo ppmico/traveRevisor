@@ -1,6 +1,4 @@
 import gpxpy
-import tkinter as tk
-from tkinter import filedialog
 from geopy.distance import geodesic
 from global_data import *
 

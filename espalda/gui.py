@@ -1,3 +1,6 @@
+# este codigo es una implementación de la interfaz grafica para la aplicación de revisión de travesías en local. 
+# no es necesario para el funcionamiento de la api y se mantiene aqui como referencia por si acaso para 
+# matener otras partes del proyecto
 import tkinter as tk
 from tkinter import filedialog
 import pandas as pd
