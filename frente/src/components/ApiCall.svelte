@@ -20,7 +20,7 @@
     async function sendData() {
         try {
             const controller = new AbortController(); //para añadir timeout al fetch
-            const timeout = setTimeout(() => controller.abort(), 10000);
+            const timeout = setTimeout(() => controller.abort(), 60000);
 
             const response = await fetch(import.meta.env.PUBLIC_APIDIR, { //TODO: mover url a .env
                 method: 'POST',
